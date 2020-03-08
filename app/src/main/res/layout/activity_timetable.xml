@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    tools:context=".timetable">
+
+    <Button
+        android:id="@+id/Third_year"
+        android:layout_width="138dp"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="468dp"
+        android:onClick="third_year"
+        android:text="Third year" />
+
+    <Button
+        android:id="@+id/Second_year"
+        android:layout_width="138dp"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="316dp"
+        android:onClick="Second_year"
+        android:text="Second year" />
+
+    <Button
+        android:id="@+id/first_year"
+        android:layout_width="138dp"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="168dp"
+        android:onClick="first_year"
+        android:text="First year" />
+
+</RelativeLayout>

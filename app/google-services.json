@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "817963241632",
+    "firebase_url": "https://vivek-4cc44.firebaseio.com",
+    "project_id": "vivek-4cc44",
+    "storage_bucket": "vivek-4cc44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817963241632:android:87a8641f8b585fa282f9c5",
+        "android_client_info": {
+          "package_name": "com.example.vss"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817963241632-qi7q4vt5ttpsvvir1g9vkih08sibim2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_bYMl-jqht0hgdEQzmCPVfBOnOI04ZrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817963241632-qi7q4vt5ttpsvvir1g9vkih08sibim2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

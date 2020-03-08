@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">vivek student system</string>
+
+    <string name="register_text"><u>Register</u></string>
+    <string name="login_text"><u>Login</u></string>
+    <string name="todo">TODO</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="vivek_college_of_commerce">Vivek College Of Commerce</string>
+    <string name="select_date">select Date</string>
+    <string-array name="user_type">
+        <item>user type</item>
+        <item>Teacher</item>
+        <item>Student</item>
+    </string-array>
+
+</resources>
