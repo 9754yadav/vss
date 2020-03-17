@@ -65,7 +65,7 @@ public class teacher_att extends AppCompatActivity{
 
             }
 
-
+// is me hai sir wo dropdown
             @Override
             public void onNothingSelected(AdapterView<?> parent)
             {
@@ -248,10 +248,14 @@ public class teacher_att extends AppCompatActivity{
 
         protected void onPostExecute(Void result) {
 
-            String[] values = new String[i1];
+            String[] values = new String[1];
+            values[0]="";
          if (i1 > 0)
          {
-
+             ArrayAdapter spinnerArrayAdapter1 = new ArrayAdapter(getApplicationContext(),
+                     android.R.layout.simple_spinner_dropdown_item,
+                     values);
+             spinc.setAdapter(spinnerArrayAdapter1);
              ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(getApplicationContext(),
                         android.R.layout.simple_spinner_dropdown_item,
                         spinnerArray);

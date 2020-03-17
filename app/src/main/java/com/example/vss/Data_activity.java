@@ -4,7 +4,7 @@ public class Data_activity
 
 {
     public static String NAMESPACE = "http://tempuri.org/";
-    public static String URL = "http://192.168.43.101/vss/WebService.asmx";
+    public static String URL = "http://192.168.0.111/vss/WebService.asmx";
     //SOAP Action URI again http://tempuri.org
     public static String SOAP_ACTION = "http://tempuri.org/";
 
@@ -19,5 +19,6 @@ public class Data_activity
     public static  String tea_name="";
     public static  String att_status="";
     public static  String att_roll="";
+    public static String[] status;
 
 }

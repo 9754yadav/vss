@@ -20,8 +20,10 @@ public class flash extends AppCompatActivity {
                 startActivity(intent);
                 finish();
 
+
             }
         },1000);
 
     }
+
 }

@@ -25,6 +25,11 @@ public class att_checkbox_adapter extends BaseAdapter {
     public att_checkbox_adapter(ArrayList<att_checkbox_Myitem> itemArray,Context mContext) {
         super();
         str =new String[Data_activity.NOS];
+        Data_activity.status=new String[Data_activity.NOS];
+        for(int i=0;i<Data_activity.NOS;i++)
+        {
+            str[i]="Absent";
+        }
         this.mContext = mContext;
         mylist=itemArray;
     }
@@ -75,21 +80,22 @@ public class att_checkbox_adapter extends BaseAdapter {
                                              boolean isChecked) {
                     int getPosition = (Integer) buttonView.getTag(); // Here
                     // we get  the position that we have set for the checkbox using setTag.
-                    mylist.get(getPosition).setChecked(buttonView.isChecked()); // Set the value of checkbox to maintain its state.
+                  mylist.get(getPosition).setChecked(buttonView.isChecked()); // Set the value of checkbox to maintain its state.
 
                     if (isChecked) {
                         //do sometheing here
                        // Toast.makeText(this, "No Data Found", Toast.LENGTH_LONG).show();
 
                         str[getPosition]="Present";
+                        Data_activity.status[getPosition]="Present";
                         Log.d("Roll no",""+Data_activity.attlist[getPosition][0]+" is "+str[getPosition]);
                         Data_activity.att_status=str[getPosition];
                         Data_activity.att_roll=Data_activity.attlist[getPosition][0];
 
-
                     }
                     else
                     {
+                        Data_activity.status[getPosition]="Absent";
                         str[getPosition]="Absent";
                         Log.d("Roll no",""+Data_activity.attlist[getPosition][0]+" is "+str[getPosition]);
                         // code here
