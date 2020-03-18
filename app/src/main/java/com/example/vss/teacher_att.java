@@ -2,14 +2,18 @@ package com.example.vss;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,6 +24,7 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import static com.example.vss.Data_activity.SOAP_ACTION;
@@ -32,6 +37,8 @@ public class teacher_att extends AppCompatActivity{
     String msg;
     String Error_Result;
     TextView tv;
+    EditText eText;
+    DatePickerDialog picker;
     int i1;
     int j,i;
     ListView list;
@@ -52,6 +59,27 @@ public class teacher_att extends AppCompatActivity{
         tv = (TextView) findViewById(R.id.textv);
         CallWebservice1 c1=new CallWebservice1();
         c1.execute();
+
+        eText=(EditText) findViewById(R.id.editText);
+        eText.setInputType(InputType.TYPE_NULL);
+        eText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                // date picker dialog
+                picker = new DatePickerDialog(teacher_att.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                eText.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                            }
+                        }, year, month, day);
+                picker.show();
+            }
+        });
 
         spinc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -212,6 +240,7 @@ public class teacher_att extends AppCompatActivity{
         try {
             androidHttpTransport.call(SOAP_ACTION + webmethod, envelope);
             SoapObject result = (SoapObject)envelope.bodyIn;
+            spinnerArray.clear();
             if (result.getPropertyCount() > 0) {
                 SoapObject Rows = (SoapObject)result.getProperty(0);
                 this.i1 = Rows.getPropertyCount();
@@ -252,13 +281,12 @@ public class teacher_att extends AppCompatActivity{
             values[0]="";
          if (i1 > 0)
          {
-             ArrayAdapter spinnerArrayAdapter1 = new ArrayAdapter(getApplicationContext(),
-                     android.R.layout.simple_spinner_dropdown_item,
-                     values);
-             spinc.setAdapter(spinnerArrayAdapter1);
+
              ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(getApplicationContext(),
                         android.R.layout.simple_spinner_dropdown_item,
                         spinnerArray);
+             spinnerArrayAdapter.setNotifyOnChange(true);
+            // spinnerArrayAdapter.add(spinnerArray);
                 spinc.setAdapter(spinnerArrayAdapter);
 
 
@@ -297,4 +325,6 @@ public class teacher_att extends AppCompatActivity{
         Intent it= new Intent(this,tea_attendance_list.class);
         startActivity(it);
     }
+
+
     }

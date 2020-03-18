@@ -95,8 +95,8 @@ public class att_checkbox_adapter extends BaseAdapter {
                     }
                     else
                     {
-                        Data_activity.status[getPosition]="Absent";
                         str[getPosition]="Absent";
+                        Data_activity.status[getPosition]="Absent";
                         Log.d("Roll no",""+Data_activity.attlist[getPosition][0]+" is "+str[getPosition]);
                         // code here
                         Data_activity.att_status=str[getPosition];

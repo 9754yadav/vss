@@ -142,7 +142,7 @@ public class tea_attendance_list extends AppCompatActivity {
             request.addProperty("sem", Data_activity.sematt);
             request.addProperty("teacher", Data_activity.tea_name);
             request.addProperty("course", Data_activity.deptcorse);
-            //request.addProperty("date",utype);
+            request.addProperty("date",Data_activity.dcal);
             request.addProperty("roll", Data_activity.attlist[i][0]);
             request.addProperty("status", Data_activity.status[i]);
             //request.addProperty("start_time",utype);

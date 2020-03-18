@@ -20,5 +20,6 @@ public class Data_activity
     public static  String att_status="";
     public static  String att_roll="";
     public static String[] status;
+    public static String dcal;
 
 }
